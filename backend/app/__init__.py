@@ -4,6 +4,7 @@ You may use, distribute and modify this code under the terms of the MIT license.
 You should have received a copy of the XYZ license with
 this file. If not, please write to: featurehuntteam@gmail.com
 """
+# pylint: disable=wrong-import-position,pointless-string-statement
 
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
 
@@ -26,6 +27,7 @@ app = create_app()
 CORS(app)
 app.config['MONGO_URI'] = os.environ.get('DB')
 mongo = PyMongo(app)
+
 
 app.secret_key = "testing"
 records = mongo.db.users
